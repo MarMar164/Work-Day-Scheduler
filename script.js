@@ -1,33 +1,27 @@
-
 let today = moment().format('MMMM Do YYYY');
 console.log(today);
 
-let Time = moment().format('h:mm:ss a')
-console.log(Time);
+let time = moment().format('h:mm:ss a')
+console.log(time);
 
 let currentEl = document.querySelector("#currentDay")
 currentEl.textContent = today
 
+let trsColor = document.querySelectorAll("tbody tr")
 
 
-// for (let index = 0; index < array.length; index++) {
-//     const element = array[index];
+for (let i = 0; i < trsColor.length; i++) {
+console.log(moment().hour())
+    console.log(trsColor[i].dataset.hour);
+    if (trsColor[i].dataset.hour < moment().hour()) {
+        trsColor[i].classList.add("past")
+    }
 
-//     if () {
-//         document.querySelector("tbody tr")[0].dataset.hour > moment().hour() 
+    else if (trsColor[i].dataset.hour > moment().hour()) {
+        trsColor[i].classList.add("future")
+    }
+    else {
+    trsColor[i].classList.add("present")
+    }
+}
 
-//         past
-//     }
-//     else if () {
-//         document.querySelector("tbody tr")[0].dataset.hour > moment().hour()
-        
-//         present
-//     }
-//     else (){
-//         document.querySelector("tbody tr")[0].dataset.hour == moment().hour()
-
-//         future
-
-//     }
-
-// }
